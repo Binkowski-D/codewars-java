@@ -36,9 +36,8 @@ public class CountingDuplicates {
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .values()
-                .stream().filter(count -> count > 1)
+                .stream()
+                .filter(count -> count > 1)
                 .count();
-
-
     }
 }
